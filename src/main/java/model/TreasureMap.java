@@ -66,6 +66,9 @@ public class TreasureMap {
             if (objectMap.get(box).getType().equals("T")) {
                 final var treasure = (Treasure) objectMap.get(box);
                 adventurer.increaseNbTreasures(treasure.collect());
+                if(treasure.getNbTreasures() == 0) {
+                    objectMap.remove(box);
+                }
             }
         }
     }
